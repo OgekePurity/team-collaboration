@@ -2,35 +2,43 @@
 let currentPlayer = "X";
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameActive = true;
-let cells = document.querySelectorAll(".cell");
-let restartBtn = document.querySelectorAll("#restart-btn");
+let cells = Array.from(document.querySelectorAll(".cell"))
+let restartBtn = document.querySelectorAll("#restart-btn")
+let playerTurnEl = document.getElementById("PT-el")
+let rollingEl = document.getElementById("rolling-el")
+let rollingContainerEl = document.getElementById("rollingContainer-el")
+playerTurnEl.classList.add(`player-${currentPlayer}`)//set animation to x
 
-// what happens when a cell is clicked
+//FUNCTIONS
 function cellClicked(cellIndex) {
     if (gameBoard[cellIndex] === '' && gameActive === true) {
         gameBoard[cellIndex] = currentPlayer;
-         
-        /* console.log("Cell clicked:", cellIndex);
-        console.log("Updated game board:", gameBoard); */
         cells[cellIndex].textContent = currentPlayer;
         currentPlayer = currentPlayer === "X" ? "O" : "X";
+        if (currentPlayer === "X") {
+            message = `player x, your turn`
+        } else {
+            message = `player o, your turn`
+        }
+        playerTurnEl.innerHTML = message
+    }
+    playerTurnEl.classList.remove('player-X');
+    playerTurnEl.classList.remove('player-O');
+    rollingEl.classList.remove('rolling-X');
+    rollingEl.classList.remove('rolling-O');
+    console.log(currentPlayer)
+    console.log(playerTurnEl.classList)
+    playerTurnEl.classList.add(`player-${currentPlayer}`)
+    rollingEl.classList.add(`rolling-${currentPlayer}`)
+}
+
+function clear() {
+    gameBoard = ['', '', '', '', '', '', '', '', ''];
+    for (let i=0; i<cells.length; i++) {
+        cells[i].textContent = '';
     }
 }
-// when restart button is clickfed
 
-restartBtn.addEventListener("click", function() {
-    gameBoard = ['', '', '', '', '', '', '', '', ''];
-    currentPlayer = "X";
-    cells.textContent = '';
-    gameActive = true;
-})
-
-/*function for current player. I dont know where we'll fix this function but whatever*/
-/* function changePlayer() {
-    currentPlayer = currentPlayer === "X"? "O" : "X"; */
-    //display a message below
-    /* STATUSDISPLAY.TEXTCONTENT = MESSAGE FOR CURRENT PLAYER TURN
-} */
 
 const winningConditions = [
     [0, 1, 2],
@@ -43,3 +51,8 @@ const winningConditions = [
     [2, 4, 6]
 ];
 
+//EVENTS
+restartBtn.addEventListener("click", function() {
+    clear()
+ })
+ 
