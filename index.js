@@ -40,6 +40,8 @@ function clear() {
 }
 
 
+
+
 const winningConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -56,3 +58,36 @@ restartBtn.addEventListener("click", function() {
     clear()
  })
  
+
+ document.addEventListener('DOMContentLoaded', () => {
+     const restartBtn = document.getElementById("restart-btn");
+     const body = document.body;
+     const images = [
+         'img1.jpg',
+         'img2.jpg',
+         'img3.jpg',
+         'img4.jpg',
+         'img5.jpg',
+         'img6.jpg',
+         'img7.jpg',
+         'img8.jpg',
+         'img9.jpg',
+         'img10.jpg'
+     ];
+ 
+     let currentIndex = 0; // Index of the current background image
+ 
+     // Function to change background image
+     function changeBackground() {
+         body.style.backgroundImage = `url('${images[currentIndex]}')`;
+         currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+     }
+ 
+     // Initial background image
+     changeBackground();
+ 
+     // Restart button click handler
+     restartBtn.addEventListener('click', () => {
+         changeBackground(); // Change background image on button click
+     });
+ });
