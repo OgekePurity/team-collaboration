@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    width: 150px;
+    height: 150px;
+    margin: 180px;
+    margin-top: 100px;
+
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 5rem;
+    border: 1px solid black;
+    cursor: pointer;
+    color: black;
+    /* z-index: 10; */
+}
+
+.test {
+    background-color: black;
+}
+
+
+.player-O {
+    background-color: chocolate;
+    
+}
+.player-X {
+    background-color: red;
+    animation: pl-x 2s ease-out 0s forwards;
+}
+
+.rolling-O {
+    display: flex;
+    justify-content: center;
+    animation: pl-O 2s linear 0s forwards;
+    background-color: skyblue;
+}
+
+.rolling-X {
+    display: flex;
+    justify-content: center;
+    animation: pl-X 2s linear 0s forwards;
+    background-color: purple;
+}
+
+@keyframes pl-X {
+    from{
+        transform: translateX(0px);
+    }
+    to {
+       transform: translateX(0px);
+    
+    }
+}
+
+@keyframes pl-O {
+    from{
+       transform: translateX(0px);
+    } to {
+       transform: translateX(500px);
+    }
+}
+
+.fiftyWidth {
+    max-width: 50%;
+    margin:0 auto;
+}
