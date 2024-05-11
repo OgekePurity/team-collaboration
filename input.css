@@ -9,7 +9,32 @@
 }
 
 body {
-    min-height: 100vh;
+    background-image: url(''); /* Initial empty background */
+    background-size: 70%;
+    transition: background-image 0.5s ease-in-out; /* Smooth transition */
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    background-color: rgba(0, 0, 0, 0.493);
+    color: aliceblue;
 }
 
 .container {
