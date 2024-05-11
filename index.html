@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     
 </head>
-<body>
+<body class="fade bg-cover">
     <h1>Tic Tac Toe</h1>
+    <p id="PT-el" class="player-X player-O my-3 p-3 text-5xl text-center fiftyWidth rounded-s-md"></p>
+    
+    <section id="rollingContainer-el" class="p-2 fiftyWidth bg-transparent rounded-lg relative">
+        <div id="rolling-el" class="rolling-X rolling-Y h-auto w-auto rounded-lg bg-fuchsia-500 p-2 ">
+            <span class="blue text-2xl">X</span>
+            <span class="purple text-2xl">O</span>
+        </div> 
+    </section>
+    
     <section>
     <div class="container" id="board">
         <div class="cell" onclick="cellClicked(0)"></div>
