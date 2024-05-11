@@ -6,6 +6,15 @@
 
 body {
     min-height: 100vh;
+    background-color: #254d9c;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    text-align: center;
+    padding-top: 5vh;
+    min-height: 100vh;
 }
 
 .container {
@@ -13,7 +22,7 @@ body {
     grid-template-columns: repeat(3,auto);
     width: 300px;
     height: 150px;
-    margin: 180px;
+    margin: auto;
     margin-top: 100px;
 
 }
@@ -23,8 +32,42 @@ body {
     height: 100px;
     text-align: center;
     font-size: 5rem;
-    border: 1px solid black;
+    border: 1px solid white;
     cursor: pointer;
-    color: black;
+    color: white;
     /* z-index: 10; */
+}
+h3 {
+    font-size: 30px;
+    font-style: italic;
+    color: white;
+}
+
+h1 {
+    font-size: 50px;
+    color: beige;
+}
+
+button {
+    color: fuchsia;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 30px;
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    width: 300px;
+    background-color: gold;
+}
+
+#restart-btn {
+    width: 300px;
+    color:white;
+    background-color: black;
+    position: absolute; bottom: 150px;
 }
