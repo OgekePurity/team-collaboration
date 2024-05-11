@@ -619,6 +619,11 @@ video {
   background-color: rgb(217 70 239 / var(--tw-bg-opacity));
 }
 
+.bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -656,8 +661,16 @@ video {
 }
 
 body {
-  min-height: 100vh;
   transition: background-image 0.5s ease-in-out;
+  background-color: #254d9c;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: o;
+  width: 100vw;
+  text-align: center;
+  padding-top: 5vh;
+  min-height: 100vh;
 }
 
 .container {
@@ -673,11 +686,39 @@ body {
   width: 100px;
   height: 100px;
   text-align: center;
-  font-size: 5rem;
-  border: 1px solid black;
+  font-size: 3rem;
+  border: 3px solid white;
   cursor: pointer;
-  color: black;
+  color: white;
   /* z-index: 10; */
+}
+
+.overlay-grid {
+  background-color: rgba(0, 0, 0, 0.253);
+}
+
+h1 {
+  font-size: 50px;
+  color: beige;
+  font-weight: bold;
+}
+
+button {
+  width: 300px;
+  color: white;
+  background-color: black;
+  position: absolute;
+  bottom: 150px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+  font-size: 30px;
+  padding: 10px 20px;
+  display: inline-block;
 }
 
 #PT-el {
@@ -686,7 +727,7 @@ body {
 }
 
 .player-O {
-  background-color: rgba(210, 105, 30, 0.582)
+  background-color: rgba(210, 105, 30, 0.582);
 }
 
 .player-X {
@@ -757,4 +798,45 @@ body {
 
 .fade {
   background-color: hsla(0, 0%, 0%, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    font-size: 12px;
+  }
+}
+
+/* Medium screens (tablets) */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .body {
+    font-size: 16px;
+  }
+}
+
+/* Large screens (desktops) */
+
+@media screen and (min-width: 1025px) {
+  .body {
+    font-size:18px;
+  }
+}
+
+@media (min-width: 640px) {
+  .sm\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
+  }
+
+  .sm\:text-red-950 {
+    --tw-text-opacity: 1;
+    color: rgb(69 10 10 / var(--tw-text-opacity));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 }
