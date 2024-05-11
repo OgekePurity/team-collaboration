@@ -10,6 +10,7 @@
 
 body {
     min-height: 100vh;
+    transition: background-image 0.5s ease-in-out;
 }
 
 .container {
@@ -33,53 +34,66 @@ body {
     /* z-index: 10; */
 }
 
-.test {
-    background-color: black;
+
+#PT-el {
+    font-family: "Dancing Script", cursive;
+    text-transform: uppercase;
 }
 
-
 .player-O {
-    background-color: chocolate;
+    background-color: rgba(210, 105, 30, 0.582)
     
 }
 .player-X {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.582);
     animation: pl-x 2s ease-out 0s forwards;
 }
 
+.purple {color: purple;}
+.blue {color: skyblue;}
+
+
 .rolling-O {
-    display: flex;
-    justify-content: center;
-    animation: pl-O 2s linear 0s forwards;
+    position: absolute;
+    animation: pl-O 1s ease-out 0s forwards;
     background-color: skyblue;
 }
 
 .rolling-X {
-    display: flex;
-    justify-content: center;
-    animation: pl-X 2s linear 0s forwards;
+    position: absolute;
+    animation: pl-X 1s ease-out 0s forwards;
     background-color: purple;
 }
 
 @keyframes pl-X {
-    from{
-        transform: translateX(0px);
+    0%{
+        right: 5px;
     }
-    to {
-       transform: translateX(0px);
+    50%{ left: 50px;}
+    75%{ left : 70px}
+    100% {
+        left: 5px;
     
     }
 }
 
 @keyframes pl-O {
     from{
-       transform: translateX(0px);
-    } to {
-       transform: translateX(500px);
+        left: 5px;
+    }
+    50%{ right: 50px;}
+    75%{ right : 70px}
+    
+     to {
+        right: 5px;
     }
 }
 
 .fiftyWidth {
     max-width: 50%;
     margin:0 auto;
+}
+
+.fade {
+    background-color: hsla(0, 0%, 0%, 0.4);
 }

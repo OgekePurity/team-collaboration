@@ -3,11 +3,29 @@ let currentPlayer = "X";
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameActive = true;
 let cells = Array.from(document.querySelectorAll(".cell"))
-let restartBtn = document.querySelectorAll("#restart-btn")
+let restartBtn = document.querySelector("#restart-btn");
 let playerTurnEl = document.getElementById("PT-el")
 let rollingEl = document.getElementById("rolling-el")
 let rollingContainerEl = document.getElementById("rollingContainer-el")
 playerTurnEl.classList.add(`player-${currentPlayer}`)//set animation to x
+playerTurnEl.innerHTML = `player x, your turn`
+
+const body = document.body
+const images = [
+    'img1.jpg',
+    'img2.jpg',
+    'img3.jpg',
+    'img4.jpg',
+    'img5.jpg',
+    'img6.jpg',
+    'img7.jpg',
+    'img8.jpg',
+    'img9.jpg',
+    'img10.jpg',
+    'img11.jpg',
+    'img12.jpg',
+]
+
 
 //FUNCTIONS
 function cellClicked(cellIndex) {
@@ -39,6 +57,10 @@ function clear() {
     }
 }
 
+function bgimage() {
+    let randomImage = images[Math.floor(Math.random() * images.length)]
+    body.style.backgroundImage = `url(./${randomImage})`
+ }
 
 const winningConditions = [
     [0, 1, 2],
@@ -54,5 +76,6 @@ const winningConditions = [
 //EVENTS
 restartBtn.addEventListener("click", function() {
     clear()
+    bgimage()
  })
  
