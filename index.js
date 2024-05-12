@@ -11,6 +11,13 @@ const bodyEl = document.getElementById('body-el')
 const boardEl = document.getElementById('board')
 playerTurnEl.classList.add(`player-${currentPlayer}`)//set animation to x
 playerTurnEl.innerHTML = `player x, your turn`
+let winsBtn = document.querySelector("#wins-btn");
+const playerXWinsDisplay = document.getElementById('playerXWinsDisplay');
+const playerOWinsDisplay = document.getElementById('playerOWinsDisplay');
+const closePopUpBtn = document.getElementById('closePopUpBtn');
+const closeIcon = document.getElementsByClassName('close')[0];
+const winsPopUp = document.getElementById("winsPopUp");
+const refreshBtn = document.getElementById("refreshBtn");
 
 const body = document.body
 const images = [
@@ -59,7 +66,7 @@ function clear() {
     for (let i=0; i<cells.length; i++) {
         cells[i].textContent = '';
     }
-    //boardEl.classList.remove('rolling-board')
+    boardEl.classList.remove('roll-board')
 }
 
 function bgimage() {
@@ -83,19 +90,53 @@ function checkWin() {
       if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
         playerTurnEl.innerHTML = `Player ${gameBoard[a]} wins!`;
         gameActive = false;
-       //spinBoard()
+        if (gameBoard[a] === "X"){
+          playerXWins++;
+        } else if (gameBoard[a] === "O") {
+          playerOWins++;
+        }
+        spinBoard()
+        showAnimation("👍", "thumbs-up")
+        updateWinsToLocalStorage()
         return;
       }
     }
     if (!gameBoard.includes('')) {
       playerTurnEl.innerHTML = 'It\'s a draw!';
       gameActive = false;
+      spinBoard()
+      showAnimation("🤝", "shaking-hands")
     }
     
   }
 function spinBoard() {
         boardEl.classList.add('roll-board')
 }
+
+function showAnimation(text, animationClass) {
+    const animationElement = document.createElement('div');
+    animationElement.textContent = text;
+    animationElement.classList.add(animationClass);
+    document.body.appendChild(animationElement);
+  
+    // Remove animationElement after animation completes
+    setTimeout(() => {
+      animationElement.remove();
+    }, 1000); // Adjust timeout based on animation duration
+  }
+
+function showAnimation(text, animationClass) {
+const animationElement = document.createElement('div');
+animationElement.textContent = text;
+animationElement.classList.add(animationClass);
+document.body.appendChild(animationElement);
+
+// Remove animationElement after animation completes
+setTimeout(() => {
+    animationElement.remove();
+}, 1000); // Adjust timeout based on animation duration
+}  
+
 //EVENTS
 restartBtn.addEventListener("click", function() {
     clear()
@@ -121,5 +162,59 @@ restartBtn.addEventListener("click", function() {
     console.log(playerTurnEl.style.backgroundColor)
   });
  */
+
+
+let playerXWins = parseInt(localStorage.getItem("playerXWins")) || 0;
+let playerOWins = parseInt(localStorage.getItem("playerOWins")) || 0; 
+
+function updateWinsToLocalStorage() {
+  localStorage.setItem("playerXWins", playerXWins.toString());
+  localStorage.setItem("playerOWins", playerOWins.toString());
+}
+
+function clearLocalStorage() {
+  localStorage.clear('playerXWins');
+  localStorage.clear("playerOWins");
+  playerXWins = 0;
+  playerOWins = 0;
+}
+winsBtn.addEventListener("click", function() {
+  displayWins();
+});
+function showWins() {
+  displayWins();
+}
+
+function displayWins() {
+  playerXWinsDisplay.textContent = `Player X Wins:${playerXWins}`;
+  playerOWinsDisplay.textContent = `Player O Wins:${playerOWins}`;
+
+  winsPopUp.style.display = 'block';
+
+  closePopUpBtn.addEventListener("click", function() {
+    winsPopUp.style.display = "none";
+  })
+  closeIcon.addEventListener("click", function() {
+    winsPopUp.style.display = "none";
+  })
+  window.addEventListener("click", function(disappear) {
+    if (disappear.target == winsPopUp) {
+      winsPopUp.style.display = "none";
+    }
+  })
+  refreshBtn.addEventListener("click", function() {
+    clearLocalStorage();
+    winsPopUp.style.display = "none";
+  })
+
+}
+
+winsBtn.addEventListener("click", function() {
+  displayWins();
+})
+
+
+
+
 console.log("end")
 //boardEl.classList.remove('rolling-board')
