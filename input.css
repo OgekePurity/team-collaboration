@@ -433,8 +433,21 @@ button {
     position: absolute;
         animation: spin 2.5s linear infinite;
 }
+
 @keyframes spin {
     to {
         transform: rotate(360deg);
     }
 } 
+
+@keyframes roll {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.roll-board {
+    animation: roll 1s ease forwards;
+}

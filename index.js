@@ -59,7 +59,7 @@ function clear() {
     for (let i=0; i<cells.length; i++) {
         cells[i].textContent = '';
     }
-    //boardEl.classList.remove('rolling-board')
+    boardEl.classList.remove('roll-board')
 }
 
 function bgimage() {
@@ -83,13 +83,14 @@ function checkWin() {
       if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
         playerTurnEl.innerHTML = `Player ${gameBoard[a]} wins!`;
         gameActive = false;
-       //spinBoard()
+        spinBoard()
         return;
       }
     }
     if (!gameBoard.includes('')) {
       playerTurnEl.innerHTML = 'It\'s a draw!';
       gameActive = false;
+      spinBoard()
     }
     
   }
