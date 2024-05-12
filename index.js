@@ -107,19 +107,24 @@ restartBtn.addEventListener("click", function() {
 
 
  
-/* console.log()
+console.log()
 
     bodyEl.addEventListener('animationstart', () => {
         playerTurnEl.style.backgroundColor = 'transparent'; // Remove existing background color
         restartBtn.style.backgroundColor = 'transparent'
+        playerTurnEl.classList.remove('player-X');
+        playerTurnEl.classList.remove('player-O');
         console.log(playerTurnEl.style.backgroundColor)
   });
                 //SUGGESTION DEAR DEBUGGER since the looping is unnecessary remove it and retry 
   bodyEl.addEventListener('animationend', () => {
     playerTurnEl.style.backgroundColor = ''; // Reset background color to its original value
     restartBtn.style.backgroundColor = ""
+    playerTurnEl.classList.add('player-X');
+    playerTurnEl.classList.add('player-O');
     console.log(playerTurnEl.style.backgroundColor)
   });
- */
+
+
 console.log("end")
 //boardEl.classList.remove('rolling-board')
