@@ -52,10 +52,17 @@
         <div class="cell" onclick="cellClicked(8)"></div>
       </div>
     </section>
-
+    <div id="winsPopUp" class="popUp">
+      <p id="playerXWinsDisplay"></p>
+      <p id="playerOWinsDisplay"></p>
+      <button id="closePopUpBtn" class="close">HIDE</button>
+      <button id="refreshBtn">REFRESH</button>
+    </div>
     <section id="btn-sec" class="flex flex-row justify-center">
       <button id="restart-btn" class="colorShowEl">RESTART GAME</button>
+      <button id="wins-btn" class="colorShowEl">NO. WINS</button>
     </section>
+    
     <script src="index.js"></script>
   </body>
 </html>

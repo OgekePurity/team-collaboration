@@ -388,11 +388,6 @@ button {
         grid-gap : 4px;
         justify-content: center;
       }
-      .cell{
-        height: 150px;
-        width: 150px;
-        font-size: 7rem;
-      }
     }
     
    
@@ -423,7 +418,6 @@ button {
     .cell{
       height: 80px;
       width: 80px;
-      font-size: 9rem;
     } 
     
     
