@@ -239,6 +239,7 @@ button,
 input:where([type='button']),
 input:where([type='reset']),
 input:where([type='submit']) {
+  -webkit-appearance: button;
   /* 1 */
   background-color: transparent;
   /* 2 */
@@ -285,6 +286,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
+  -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
   /* 2 */
@@ -424,6 +426,7 @@ embed,
 object {
   display: block;
   /* 1 */
+  vertical-align: middle;
   /* 2 */
 }
 
@@ -1170,14 +1173,23 @@ button {
     font-size: 16px;
   }
 
-  #board {
-    width: 400px;
-    height: 400px;
+  .md\:container {
+    width: 100%;
+    max-width: 450px;
+    margin:auto;
+    padding:20px;
+    box-sizing: border-box;
+    transition: width 0.5s ease;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3,auto);
+    grid-gap : 4px;
+    justify-content: center;
   }
 
   .cell{
-    height: 133px;
-    width: 133px;
+    height: 150px;
+    width: 150px;
     font-size: 7rem;
   }
 }
@@ -1189,9 +1201,19 @@ button {
     font-size:18px;
   }
 
-  #board {
-    width: 600px;
+  .lg\:container {
+    width: 100%;
+    max-width: 600px;
+    margin:auto;
+    padding:20px;
+    box-sizing: border-box;
+    transition: width 0.5s ease;
     height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(3,auto);
+    grid-gap : 4px;
+    justify-content: center;
   }
 
   .cell{
@@ -1229,4 +1251,4 @@ button {
     font-size: 1.5rem;
     line-height: 2rem;
   }
-}
+} 
