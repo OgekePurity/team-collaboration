@@ -1,47 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tic Tac Toe</title>
-        <link rel="stylesheet" href="output.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-        
-    </head>
-    <body id="body-el" class="colshow bg-cover lg:text-2xl sm:text-7xl sm:text-red-950 bg-slate-500 body font-size" >
-        <h1 id="gameTitle" class="mb-2">
-            <span id="tic" class="tic">Tic</span>
-            <span id="tac" class="tac">Tac</span> 
-            <span id="toe" class="toe" >Toe</span>
-        </h1>
-        <p id="PT-el" class="colorShowEl player-X player-O my-3 p-3 text-5xl text-center fiftyWidth rounded-s-md"></p>
-        
-        <section id="rollingContainer-el" class="p-2 fiftyWidth bg-transparent rounded-lg relative">
-            <div id="rolling-el" class="rolling-X rolling-Y h-auto w-auto rounded-lg bg-fuchsia-500 p-2 ">
-                <span class="blue text-2xl">X</span>
-                <span class="purple text-2xl">O</span>
-            </div> 
-        </section>
-        
-        <section id="overlay-grid" class="overlay-grid my-12 w-auto" >
-            <div id="board" class="container w-auto">
-                <div class="cell" onclick="cellClicked(0)"></div>
-                <div class="cell" onclick="cellClicked(1)"></div>
-                <div class="cell" onclick="cellClicked(2)"></div>
-                <div class="cell" onclick="cellClicked(3)"></div>
-                <div class="cell" onclick="cellClicked(4)"></div>
-                <div class="cell" onclick="cellClicked(5)"></div>
-                <div class="cell" onclick="cellClicked(6)"></div>
-                <div class="cell" onclick="cellClicked(7)"></div>
-                <div class="cell" onclick="cellClicked(8)"></div>
-            </div>
-        </section>
-        
-        <section id="btn-sec" class="flex flex-row justify-center">
-            <button id="restart-btn" class="colorShowEl">RESTART GAME</button>
-        </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    id="body-el"
+    class="colshow bg-cover lg:text-2xl sm:text-7xl sm:text-red-950 bg-slate-500 body font-size"
+  >
+    <h1 id="gameTitle" class="mb-2">
+      <span id="tic" class="tic">Tic</span>
+      <span id="tac" class="tac">Tac</span>
+      <span id="toe" class="toe">Toe</span>
+    </h1>
+    <p
+      id="PT-el"
+      class="colorShowEl player-X player-O my-3 p-3 text-5xl text-center fiftyWidth rounded-s-md"
+    ></p>
+
+    <section
+      id="rollingContainer-el"
+      class="p-2 fiftyWidth bg-transparent rounded-lg relative"
+    >
+      <div
+        id="rolling-el"
+        class="rolling-X rolling-Y h-auto w-auto rounded-lg bg-fuchsia-500 p-2"
+      >
+        <span class="blue text-2xl">X</span>
+        <span class="purple text-2xl">O</span>
+      </div>
+    </section>
+
+    <section id="overlay-grid" class="overlay-grid my-12 w-auto">
+      <div id="board" class="container w-auto">
+        <div class="cell" onclick="cellClicked(0)"></div>
+        <div class="cell" onclick="cellClicked(1)"></div>
+        <div class="cell" onclick="cellClicked(2)"></div>
+        <div class="cell" onclick="cellClicked(3)"></div>
+        <div class="cell" onclick="cellClicked(4)"></div>
+        <div class="cell" onclick="cellClicked(5)"></div>
+        <div class="cell" onclick="cellClicked(6)"></div>
+        <div class="cell" onclick="cellClicked(7)"></div>
+        <div class="cell" onclick="cellClicked(8)"></div>
+      </div>
+    </section>
+
+    <section id="btn-sec" class="flex flex-row justify-center">
+      <button id="restart-btn" class="colorShowEl">RESTART GAME</button>
+    </section>
     <script src="index.js"></script>
-    </body>
+  </body>
 </html>
