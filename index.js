@@ -84,6 +84,7 @@ function checkWin() {
         playerTurnEl.innerHTML = `Player ${gameBoard[a]} wins!`;
         gameActive = false;
         spinBoard()
+        showAnimation("👍", "thumbs-up")
         return;
       }
     }
@@ -91,12 +92,38 @@ function checkWin() {
       playerTurnEl.innerHTML = 'It\'s a draw!';
       gameActive = false;
       spinBoard()
+      showAnimation("🤝", "shaking-hands")
     }
     
   }
 function spinBoard() {
         boardEl.classList.add('roll-board')
 }
+
+function showAnimation(text, animationClass) {
+    const animationElement = document.createElement('div');
+    animationElement.textContent = text;
+    animationElement.classList.add(animationClass);
+    document.body.appendChild(animationElement);
+  
+    // Remove animationElement after animation completes
+    setTimeout(() => {
+      animationElement.remove();
+    }, 1000); // Adjust timeout based on animation duration
+  }
+
+function showAnimation(text, animationClass) {
+const animationElement = document.createElement('div');
+animationElement.textContent = text;
+animationElement.classList.add(animationClass);
+document.body.appendChild(animationElement);
+
+// Remove animationElement after animation completes
+setTimeout(() => {
+    animationElement.remove();
+}, 1000); // Adjust timeout based on animation duration
+}  
+
 //EVENTS
 restartBtn.addEventListener("click", function() {
     clear()

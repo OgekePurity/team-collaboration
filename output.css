@@ -610,6 +610,10 @@ video {
   display: flex;
 }
 
+.grid {
+  display: grid;
+}
+
 .h-auto {
   height: auto;
 }
@@ -1199,11 +1203,12 @@ button {
 @media screen and (min-width: 1025px) {
   body {
     font-size:18px;
+    max-width: 100%;
+    max-height: 100vh;
   }
 
   .lg\:container {
     width: 100%;
-    max-width: 600px;
     margin:auto;
     padding:20px;
     box-sizing: border-box;
@@ -1217,8 +1222,8 @@ button {
   }
 
   .cell{
-    height: 200px;
-    width: 200px;
+    height: 80px;
+    width: 80px;
     font-size: 9rem;
   }
 }
@@ -1246,6 +1251,83 @@ button {
 
 .roll-board {
   animation: roll 1s ease forwards;
+}
+
+@keyframes thumbs-up {
+  0% {
+    transform: translateY(0);
+    transform: scale(5);
+    opacity:1;
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(-40px);
+    opacity:0;
+  }
+}
+
+.thumbs-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  opacity: 0;
+  animation: thumbs-up 4s ease forwards;
+}
+
+@keyframes shaking-hands {
+  0% {
+    transform: translateY(0);
+    transform: scale(10);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-20);
+  }
+
+  100% {
+    transform: translateY(-40);
+    opacity: 0;
+  }
+}
+
+.shaking-hands {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  animation: shake 2s ease forwards;
+}
+
+#home-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a:link {
+  color: blue;
+  font-weight: 800;
+}
+
+.seen-image {
+  background-image: url("img2.jpg");
+  color: whitesmoke;
+}
+
+img {
+  height:350px
+}
+
+.pbh {
+  background-color: rgba(0, 0, 0, 0.418);
 }
 
 @media (min-width: 640px) {
