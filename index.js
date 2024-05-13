@@ -173,7 +173,7 @@ function updateWinsToLocalStorage() {
 }
 
 function clearLocalStorage() {
-  localStorage.clear('playerXWins');
+  localStorage.clear("playerXWins");
   localStorage.clear("playerOWins");
   playerXWins = 0;
   playerOWins = 0;
