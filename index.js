@@ -189,7 +189,9 @@ function displayWins() {
   playerXWinsDisplay.textContent = `Player X Wins:${playerXWins}`;
   playerOWinsDisplay.textContent = `Player O Wins:${playerOWins}`;
 
-  winsPopUp.style.display = 'block';
+  winsPopUp.style.display = "block";
+  refreshBtn.style.display = "block";
+  closePopUpBtn.style.display = "block";
 
   closePopUpBtn.addEventListener("click", function() {
     winsPopUp.style.display = "none";
