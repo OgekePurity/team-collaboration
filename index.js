@@ -126,15 +126,15 @@ function showAnimation(text, animationClass) {
   }
 
 function showAnimation(text, animationClass) {
-const animationElement = document.createElement('div');
-animationElement.textContent = text;
-animationElement.classList.add(animationClass);
-document.body.appendChild(animationElement);
+  const animationElement = document.createElement('div');
+  animationElement.textContent = text;
+  animationElement.classList.add(animationClass);
+  document.body.appendChild(animationElement);
 
-// Remove animationElement after animation completes
-setTimeout(() => {
-    animationElement.remove();
-}, 1000); // Adjust timeout based on animation duration
+  // Remove animationElement after animation completes
+  setTimeout(() => {
+      animationElement.remove();
+  }, 1000); // Adjust timeout based on animation duration
 }  
 
 //EVENTS
