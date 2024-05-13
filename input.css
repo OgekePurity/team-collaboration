@@ -518,3 +518,19 @@ img {
 .pbh {
     background-color: rgba(0, 0, 0, 0.418);
 }
+/*style the buttons to be side by side*/
+ #winsPopUp {
+    display: none;
+    width:  100%;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center;
+ }
+ #closePopUpBtn {
+    display: none;
+    margin: 10px;
+ }
+ #refreshBtn {
+    display: none;
+ }
